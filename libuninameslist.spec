@@ -1,5 +1,5 @@
-%define	version 040707
-%define release 1mdk
+%define	version 20060907
+%define release %mkrel 1
 
 %define major 0
 %define libname %mklibname uninameslist %{major}
@@ -49,7 +49,7 @@ developing any software that make use of this library.
 %patch0 -p1 -b .destdir
 
 %build
-%configure2_5x --enable-static
+%configure --enable-static
 %make
 
 %install
