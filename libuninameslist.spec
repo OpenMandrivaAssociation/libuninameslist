@@ -13,7 +13,6 @@ Group:		System/Libraries
 URL:		http://libuninameslist.sourceforge.net/
 Source:		http://prdownloads.sourceforge.net/%{name}/%{name}_src-%{version}.tar.bz2
 Patch0:		libuninameslist-destdir.patch
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The Unicode consortium provides a file containing annotations on many
