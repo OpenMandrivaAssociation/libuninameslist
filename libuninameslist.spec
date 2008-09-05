@@ -1,8 +1,9 @@
-%define	version 20060907
-%define release %mkrel 2
+%define	version 20080409
+%define release %mkrel 1
 
 %define major 0
 %define libname %mklibname uninameslist %{major}
+%define develname %mklibname uninameslist -d
 
 Summary:	A Library of Unicode annotation data
 Name:		libuninameslist
@@ -11,8 +12,8 @@ Release:	%{release}
 License:	BSD Style
 Group:		System/Libraries
 URL:		http://libuninameslist.sourceforge.net/
-Source:		http://prdownloads.sourceforge.net/%{name}/%{name}_src-%{version}.tar.bz2
-Patch0:		libuninameslist-destdir.patch
+Source:		http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+#Patch0:		libuninameslist-destdir.patch
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -30,13 +31,14 @@ The Unicode consortium provides a file containing annotations on many
 unicode characters. This library contains a compiled version of this
 file so that programs can access these data easily.
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Development files for %{name}
 Group:		Development/C
 Provides:	%{name}-devel = %{version}-%{release}
 Requires:	%{libname} = %{version}
+Obsoletes:	%{_lib}uninameslist0-devel
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 The Unicode consortium provides a file containing annotations on many
 unicode characters. This library contains a compiled version of this
 file so that programs can access these data easily.
@@ -46,7 +48,7 @@ developing any software that make use of this library.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1 -b .destdir
+#%patch0 -p1 -b .destdir
 
 %build
 %configure --enable-static
@@ -69,9 +71,9 @@ rm -rf %{buildroot}
 %files -n %{libname}
 %defattr(-,root,root)
 %doc LICENSE
-%{_libdir}/lib*.so.*
+%{_libdir}/lib*.so.%{major}*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/lib*.so
