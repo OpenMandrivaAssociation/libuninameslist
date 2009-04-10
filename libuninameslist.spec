@@ -51,7 +51,7 @@ developing any software that make use of this library.
 #%patch0 -p1 -b .destdir
 
 %build
-%configure --enable-static
+%configure2_5x --enable-static
 %make
 
 %install
