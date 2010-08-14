@@ -1,5 +1,5 @@
-%define	version 20080409
-%define release %mkrel 3
+%define	version 20091231
+%define release %mkrel 1
 
 %define major 0
 %define libname %mklibname uninameslist %{major}
@@ -13,7 +13,6 @@ License:	BSD Style
 Group:		System/Libraries
 URL:		http://libuninameslist.sourceforge.net/
 Source:		http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
-#Patch0:		libuninameslist-destdir.patch
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -48,7 +47,6 @@ developing any software that make use of this library.
 
 %prep
 %setup -q -n %{name}
-#%patch0 -p1 -b .destdir
 
 %build
 %configure2_5x --enable-static
