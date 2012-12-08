@@ -1,5 +1,5 @@
 %define	version 20091231
-%define release %mkrel 2
+%define release %mkrel 4
 
 %define major 0
 %define libname %mklibname uninameslist %{major}
@@ -76,5 +76,56 @@ rm -rf %{buildroot}
 %{_includedir}/*
 %{_libdir}/lib*.so
 %{_libdir}/lib*.a
-%{_libdir}/lib*.la
+
+
+
+%changelog
+* Fri Apr 29 2011 Oden Eriksson <oeriksson@mandriva.com> 20091231-2mdv2011.0
++ Revision: 660288
+- mass rebuild
+
+* Sun Aug 15 2010 Emmanuel Andry <eandry@mandriva.org> 20091231-1mdv2011.0
++ Revision: 569841
+- New version 20091231
+
+* Tue Mar 16 2010 Oden Eriksson <oeriksson@mandriva.com> 20080409-3mdv2010.1
++ Revision: 520914
+- rebuilt for 2010.1
+
+* Wed Sep 02 2009 Christophe Fergeau <cfergeau@mandriva.com> 20080409-2mdv2010.0
++ Revision: 425854
+- rebuild
+
+* Fri Apr 10 2009 Funda Wang <fwang@mandriva.org> 20080409-1mdv2009.1
++ Revision: 365693
+- use configure2_5x
+
+* Fri Sep 05 2008 Emmanuel Andry <eandry@mandriva.org> 20080409-1mdv2009.0
++ Revision: 281375
+- New version
+- apply devel policy
+- check major
+
+* Tue Jun 17 2008 Thierry Vignaud <tv@mandriva.org> 20060907-2mdv2009.0
++ Revision: 223014
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Mon Dec 17 2007 Thierry Vignaud <tv@mandriva.org> 20060907-1mdv2008.1
++ Revision: 129169
+- kill re-definition of %%buildroot on Pixel's request
+
+* Thu May 03 2007 Adam Williamson <awilliamson@mandriva.org> 20060907-1mdv2008.0
++ Revision: 20864
+- 20060907, rebuild for new era
+
+
+* Sun Jan 16 2005 Abel Cheung <deaddog@mandrake.org> 040707-1mdk
+- First Mandrakelinux package
+- P0: Add DESTDIR support and add missing --mode=* to libtool calls
 
