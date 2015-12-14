@@ -1,6 +1,7 @@
 %define major 0
 %define libname %mklibname uninameslist %{major}
 %define devname %mklibname uninameslist -d
+%define _disable_lto 1
 
 Summary:	A Library of Unicode annotation data
 Name:		libuninameslist
