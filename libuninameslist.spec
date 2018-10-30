@@ -6,7 +6,7 @@
 Summary:	A Library of Unicode annotation data
 Name:		libuninameslist
 Version:	20091231
-Release:	15
+Release:	16
 License:	BSD Style
 Group:		System/Libraries
 Url:		http://libuninameslist.sourceforge.net/
