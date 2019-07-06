@@ -38,25 +38,24 @@ This package provides development related files for compiling or
 developing any software that make use of this library.
 
 %prep
-%setup -qn %{name}
+%setup -q
 
 %build
-47 	autoreconf -vfi
-48 	%configure2_5x --disable-static
-49 	%make_build
-50 	
-51 	%install
-52 	%make_install
-53 	
-54 	find %{buildroot} -name '*.la' -delete
-55 	
-56 	%files -n %{libname}
-57 	%doc LICENSE
-58 	%{_libdir}/lib*.so.%{major}{,.*}
-59 	
-60 	%files -n %{devname}
-61 	%{_includedir}/*
-62 	%{_libdir}/lib*.so
-63 	%{_libdir}/pkgconfig/%{name}.pc
-64 	%{_mandir}/man3/%{name}.3.*
+autoreconf -vfi
+%configure2_5x --disable-static
+%make_build
+	
+%install
+%make_install
 
+find %{buildroot} -name '*.la' -delete
+
+%files -n %{libname}
+%doc LICENSE
+%{_libdir}/lib*.so.%{major}{,.*}
+	
+%files -n %{devname}
+%{_includedir}/*
+%{_libdir}/lib*.so
+%{_libdir}/pkgconfig/%{name}.pc
+%{_mandir}/man3/%{name}.3.*
