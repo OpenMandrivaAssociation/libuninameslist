@@ -1,16 +1,16 @@
-%define major 0
+%define major 1
 %define libname %mklibname uninameslist %{major}
 %define devname %mklibname uninameslist -d
 %define _disable_lto 1
 
 Summary:	A Library of Unicode annotation data
 Name:		libuninameslist
-Version:	20091231
+Version:	20190701
 Release:	16
 License:	BSD Style
 Group:		System/Libraries
 Url:		http://libuninameslist.sourceforge.net/
-Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source0:	https://github.com/fontforge/libuninameslist/archive/%{version}/%{name}-%{version}.tar.gz
 
 %description
 The Unicode consortium provides a file containing annotations on many
@@ -41,18 +41,22 @@ developing any software that make use of this library.
 %setup -qn %{name}
 
 %build
-%configure2_5x --disable-static
-%make
-
-%install
-%makeinstall_std
-
-%files -n %{libname}
-%{_libdir}/libuninameslist.so.%{major}*
-%{_libdir}/libuninameslist-fr.so.%{major}*
-
-%files -n %{devname}
-%doc LICENSE
-%{_includedir}/*
-%{_libdir}/lib*.so
+47 	autoreconf -vfi
+48 	%configure2_5x --disable-static
+49 	%make_build
+50 	
+51 	%install
+52 	%make_install
+53 	
+54 	find %{buildroot} -name '*.la' -delete
+55 	
+56 	%files -n %{libname}
+57 	%doc LICENSE
+58 	%{_libdir}/lib*.so.%{major}{,.*}
+59 	
+60 	%files -n %{devname}
+61 	%{_includedir}/*
+62 	%{_libdir}/lib*.so
+63 	%{_libdir}/pkgconfig/%{name}.pc
+64 	%{_mandir}/man3/%{name}.3.*
 
