@@ -5,7 +5,7 @@
 
 Summary:	A Library of Unicode annotation data
 Name:		libuninameslist
-Version:	20240524
+Version:	20240910
 Release:	1
 License:	BSD Style
 Group:		System/Libraries
