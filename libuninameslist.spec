@@ -9,7 +9,7 @@ Version:	20240910
 Release:	1
 License:	BSD Style
 Group:		System/Libraries
-Url:		http://libuninameslist.sourceforge.net/
+Url:		https://libuninameslist.sourceforge.net/
 Source0:	https://github.com/fontforge/libuninameslist/archive/%{version}/%{name}-%{version}.tar.gz
 
 %description
