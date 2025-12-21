@@ -12,6 +12,11 @@ Group:		System/Libraries
 Url:		https://libuninameslist.sourceforge.net/
 Source0:	https://github.com/fontforge/libuninameslist/archive/%{version}/%{name}-%{version}.tar.gz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 The Unicode consortium provides a file containing annotations on many
 unicode characters. This library contains a compiled version of this
